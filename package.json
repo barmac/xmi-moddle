@@ -10,7 +10,8 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha --reporter=spec --recursive test/spec",
-    "dev": "nodemon --exec npm run test"
+    "dev": "nodemon --exec npm run test",
+    "debug": "npm test -- --inspect-brk"
   },
   "keywords": [],
   "author": "Maciej Barelkowski <maciej.barelkowski@camunda.com>",

@@ -13,7 +13,11 @@
           "type": "String"
         },
         {
-          "name": "values",
+          "name": "package",
+          "type": "XMIElement"
+        },
+        {
+          "name": "extensions",
           "type": "Element",
           "isMany": true
         }
@@ -93,6 +97,28 @@
     {
       "name": "Any",
       "properties": []
+    },
+    {
+      "name": "XMIElement",
+      "isAbstract": true,
+      "properties": [
+        {
+          "name": "id",
+          "isAttr": true,
+          "isId": true,
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "idref",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
     }
   ],
   "associations": [],

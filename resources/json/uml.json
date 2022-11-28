@@ -2,7 +2,149 @@
   "name": "UML",
   "prefix": "uml",
   "uri": "http://www.omg.org/spec/UML/20131001",
-  "types": [],
+  "types": [
+    {
+      "isAbstract": true,
+      "name": "NamedElement",
+      "properties": [
+        {
+          "name": "name",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+    {
+      "name": "PackageableElement",
+      "superClass": [
+        "xmi:XMIElement",
+        "NamedElement"
+      ],
+      "properties": [
+        {
+          "name": "generalization",
+          "type": "Generalization"
+        },
+        {
+          "name": "ownedComment",
+          "type": "Comment"
+        },
+        {
+          "name": "ownedAttribute",
+          "type": "Property",
+          "isMany": true
+        },
+        {
+          "name": "packagedElement",
+          "isMany": true,
+          "type": "PackageableElement"
+        },
+        {
+          "name": "memberEnd",
+          "type": "Property",
+          "isMany": true
+        },
+        {
+          "name": "ownedEnd",
+          "type": "Property"
+        }
+      ]
+    },
+    {
+      "name": "Property",
+      "superClass": [
+        "xmi:XMIElement",
+        "NamedElement"
+      ],
+      "properties": [
+        {
+          "name": "visibility",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "aggregation",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "association",
+          "type": "Association"
+        },
+        {
+          "name": "type",
+          "type": "Type"
+        },
+        {
+          "name": "upperValue",
+          "type": "UpperValue"
+        },
+        {
+          "name": "lowerValue",
+          "type": "LowerValue"
+        }
+      ]
+    },
+    {
+      "name": "Package",
+      "superClass": [
+        "xmi:XMIElement",
+        "NamedElement",
+        "PackageableElement"
+      ],
+      "properties": [
+        {
+          "name": "URI",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "superClass": [
+        "xmi:XMIElement",
+        "NamedElement"
+      ],
+      "properties": [
+        {
+          "name": "body",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "ownedComment",
+          "type": "Comment"
+        },
+        {
+          "name": "annotatedElement",
+          "type": "AnnotatedElement"
+        }
+      ]
+    },
+    {
+      "name": "Generalization",
+      "superClass": [
+        "xmi:XMIElement",
+        "NamedElement"
+      ],
+      "properties": [
+        {
+          "name": "general",
+          "type": "General"
+        }
+      ]
+    },
+    {
+      "name": "Type",
+      "properties": [
+        {
+          "name": "href",
+          "type": "String"
+        }
+      ]
+    }
+  ],
   "associations": [],
   "enumerations": [],
   "xml": {
