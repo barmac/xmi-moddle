@@ -1,0 +1,11 @@
+{
+  "name": "UML",
+  "prefix": "uml",
+  "uri": "http://www.omg.org/spec/UML/20131001",
+  "types": [],
+  "associations": [],
+  "enumerations": [],
+  "xml": {
+    "tagAlias": "lowerCase"
+  }
+}

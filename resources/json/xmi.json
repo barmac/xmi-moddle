@@ -1,0 +1,103 @@
+{
+  "name": "XMI",
+  "prefix": "xmi",
+  "uri": "http://www.omg.org/spec/XMI/20131001",
+  "types": [
+    {
+      "name": "XMI",
+      "properties": [
+        {
+          "name": "id",
+          "isAttr": true,
+          "isId": true,
+          "type": "String"
+        },
+        {
+          "name": "values",
+          "type": "Element",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "properties": [
+        {
+          "name": "id",
+          "isAttr": true,
+          "isId": true,
+          "type": "String"
+        },
+        {
+          "name": "contact",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "exporter",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "exporterVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "longDescription",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "shortDescription",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "notice",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "owner",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "timestamp",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Extension",
+      "properties": []
+    },
+    {
+      "name": "Difference",
+      "properties": []
+    },
+    {
+      "name": "Add",
+      "properties": []
+    },
+    {
+      "name": "Replace",
+      "properties": []
+    },
+    {
+      "name": "Delete",
+      "properties": []
+    },
+    {
+      "name": "Any",
+      "properties": []
+    }
+  ],
+  "associations": [],
+  "enumerations": [],
+  "xml": {
+    "tagAlias": "lowerCase"
+  }
+}
