@@ -15,7 +15,9 @@
         {
           "name": "package",
           "type": "uml:Package",
-          "serialize": "xmi:type"
+          "xml": {
+            "serialize": "xmi:type"
+          }
         },
         {
           "name": "extensions",

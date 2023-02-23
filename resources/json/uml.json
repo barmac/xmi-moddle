@@ -24,7 +24,9 @@
         {
           "name": "generalization",
           "type": "Generalization",
-          "serialize": "xmi:type"
+          "xml": {
+            "serialize": "xmi:type"
+          }
         },
         {
           "name": "ownedComment",
@@ -34,13 +36,17 @@
           "name": "ownedAttribute",
           "type": "Property",
           "isMany": true,
-          "serialize": "xmi:type"
+          "xml": {
+            "serialize": "xmi:type"
+          }
         },
         {
           "name": "packagedElement",
           "isMany": true,
           "type": "PackageableElement",
-          "serialize": "xmi:type"
+          "xml": {
+            "serialize": "xmi:type"
+          }
         },
         {
           "name": "memberEnd",
@@ -94,12 +100,16 @@
         {
           "name": "upperValue",
           "type": "Integer",
-          "serialize": "xmi:type"
+          "xml": {
+            "serialize": "xmi:type"
+          }
         },
         {
           "name": "lowerValue",
           "type": "Integer",
-          "serialize": "xmi:type"
+          "xml": {
+            "serialize": "xmi:type"
+          }
         }
       ]
     },
