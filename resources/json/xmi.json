@@ -14,7 +14,8 @@
         },
         {
           "name": "package",
-          "type": "XMIElement"
+          "type": "uml:Package",
+          "serialize": "xmi:type"
         },
         {
           "name": "extensions",

@@ -59,6 +59,14 @@
       ]
     },
     {
+      "name": "Class",
+      "superClass": [
+        "xmi:XMIElement",
+        "NamedElement"
+      ],
+      "properties": []
+    },
+    {
       "name": "Property",
       "superClass": [
         "xmi:XMIElement",

@@ -13,6 +13,23 @@ describe('xmi-moddle', function() {
   });
 
 
+  it.only('should parse mini-XMI', async function() {
+
+    // given
+    const xmi = readFile('resources/xmi/XMI-model-mini.xmi');
+
+    // when
+    const result = await moddle.fromXML(xmi);
+
+    // then
+    for (const warning of result.warnings) {
+      console.dir(warning);
+    }
+
+    expect(result.warnings).to.be.empty;
+  });
+
+
   it('should parse', async function() {
 
     // given
