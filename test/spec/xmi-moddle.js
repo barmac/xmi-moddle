@@ -37,4 +37,30 @@ describe('xmi-moddle', function() {
     // then
     expect(result.warnings).to.be.empty;
   });
+
+
+  it('should parse DMN 1.5 XMI', async function() {
+
+    // given
+    const xmi = readFile('resources/xmi/DMN15.xmi');
+
+    // when
+    const result = await moddle.fromXML(xmi);
+
+    // then
+    expect(result.warnings).to.be.empty;
+  });
+
+
+  it('should parse DMNDI 1.5 XMI', async function() {
+
+    // given
+    const xmi = readFile('resources/xmi/DMNDI15.xmi');
+
+    // when
+    const result = await moddle.fromXML(xmi);
+
+    // then
+    expect(result.warnings).to.be.empty;
+  });
 });
