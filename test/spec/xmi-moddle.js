@@ -35,7 +35,6 @@ describe('xmi-moddle', function() {
     const result = await moddle.fromXML(xmi);
 
     // then
-    printWarnings(result);
     expect(result.warnings).to.be.empty;
   });
 
@@ -52,9 +51,3 @@ describe('xmi-moddle', function() {
     expect(result.warnings).to.be.empty;
   });
 });
-
-function printWarnings(result) {
-  for (let warning of result.warnings) {
-    console.log(warning);
-  }
-}
