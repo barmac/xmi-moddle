@@ -19,10 +19,12 @@ describe('xmi-moddle', function() {
     const xmi = readFile('resources/xmi/XMI-model-mini.xmi');
 
     // when
+    debugger;
     const result = await moddle.fromXML(xmi);
 
     // then
     for (const warning of result.warnings) {
+      console.log(`${warning.message}, type: ${warning?.element?.$type}`);
       console.dir(warning);
     }
 

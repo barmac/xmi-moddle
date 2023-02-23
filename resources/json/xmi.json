@@ -13,16 +13,12 @@
           "type": "String"
         },
         {
-          "name": "package",
-          "type": "uml:Package",
+          "name": "extension",
+          "type": "XMIElement",
+          "isMany": true,
           "xml": {
             "serialize": "xmi:type"
           }
-        },
-        {
-          "name": "extensions",
-          "type": "Element",
-          "isMany": true
         }
       ]
     },
