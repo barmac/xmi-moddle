@@ -116,7 +116,7 @@
     {
       "name": "Package",
       "superClass": [
-        "xmi:XMIElement",
+        "xmi:Extension",
         "NamedElement",
         "PackageableElement"
       ],

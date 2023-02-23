@@ -13,8 +13,8 @@
           "type": "String"
         },
         {
-          "name": "extension",
-          "type": "XMIElement",
+          "name": "extensions",
+          "type": "Extension",
           "isMany": true,
           "xml": {
             "serialize": "xmi:type"
@@ -74,10 +74,6 @@
       ]
     },
     {
-      "name": "Extension",
-      "properties": []
-    },
-    {
       "name": "Difference",
       "properties": []
     },
@@ -108,10 +104,20 @@
           "type": "String"
         },
         {
+          "name": "type",
+          "type": "String"
+        },
+        {
           "name": "idref",
           "isAttr": true,
           "type": "String"
         }
+      ]
+    },
+    {
+      "name": "Extension",
+      "superClass": [
+        "XMIElement"
       ]
     }
   ],
