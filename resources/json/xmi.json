@@ -107,8 +107,8 @@
         },
         {
           "name": "idref",
-          "isAttr": true,
-          "type": "String"
+          "isReference": true,
+          "type": "XMIElement"
         }
       ]
     },

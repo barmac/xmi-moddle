@@ -284,7 +284,8 @@
       "properties": [
         {
           "name": "type",
-          "type": "String",
+          "isReference": true,
+          "type": "PackageableElement",
           "isAttr": true
         },
         {
