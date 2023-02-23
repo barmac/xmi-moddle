@@ -17,7 +17,8 @@
   "author": "Maciej Barelkowski <maciej.barelkowski@camunda.com>",
   "license": "MIT",
   "dependencies": {
-    "moddle-xml": "^10.0.0"
+    "moddle": "^7.0.0-exp.1",
+    "moddle-xml": "^11.0.0-exp.1"
   },
   "devDependencies": {
     "chai": "^4.3.7",
