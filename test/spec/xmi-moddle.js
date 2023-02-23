@@ -22,6 +22,10 @@ describe('xmi-moddle', function() {
     const result = await moddle.fromXML(xmi);
 
     // then
+    for (const warning of result.warnings) {
+      console.dir(warning);
+    }
+
     expect(result.warnings).to.be.empty;
   });
 });

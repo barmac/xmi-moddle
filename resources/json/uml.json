@@ -23,7 +23,8 @@
       "properties": [
         {
           "name": "generalization",
-          "type": "Generalization"
+          "type": "Generalization",
+          "serialize": "xmi:type"
         },
         {
           "name": "ownedComment",
@@ -32,12 +33,14 @@
         {
           "name": "ownedAttribute",
           "type": "Property",
-          "isMany": true
+          "isMany": true,
+          "serialize": "xmi:type"
         },
         {
           "name": "packagedElement",
           "isMany": true,
-          "type": "PackageableElement"
+          "type": "PackageableElement",
+          "serialize": "xmi:type"
         },
         {
           "name": "memberEnd",
@@ -47,6 +50,11 @@
         {
           "name": "ownedEnd",
           "type": "Property"
+        },
+        {
+          "name": "isAbstract",
+          "type": "Boolean",
+          "isAttr": true
         }
       ]
     },
@@ -77,11 +85,13 @@
         },
         {
           "name": "upperValue",
-          "type": "UpperValue"
+          "type": "Integer",
+          "serialize": "xmi:type"
         },
         {
           "name": "lowerValue",
-          "type": "LowerValue"
+          "type": "Integer",
+          "serialize": "xmi:type"
         }
       ]
     },
@@ -143,6 +153,20 @@
           "type": "String"
         }
       ]
+    },
+    {
+      "name": "General",
+      "superClass": [
+        "xmi:XMIElement"
+      ],
+      "properties": []
+    },
+    {
+      "name": "Association",
+      "superClass": [
+        "xmi:XMIElement"
+      ],
+      "properties": []
     }
   ],
   "associations": [],
