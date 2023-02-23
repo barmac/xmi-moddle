@@ -5,43 +5,29 @@
   "types": [
     {
       "isAbstract": true,
-      "name": "Base",
+      "name": "BaseElement",
       "superClass": [
         "xmi:XMIElement"
-      ],
-      "properties": []
-    },
-    {
-      "isAbstract": true,
-      "name": "NamedElement",
-      "superClass": [
-        "Base"
       ],
       "properties": [
         {
           "name": "name",
           "type": "String",
           "isAttr": true
-        }
-      ]
-    },
-    {
-      "isAbstract": true,
-      "name": "Commentable",
-      "extends": [
-        "uml:Base"
-      ],
-      "properties": [
+        },
         {
           "name": "ownedComment",
-          "type": "Comment"
+          "type": "Comment",
+          "xml": {
+            "serialize": "xmi:type"
+          }
         }
       ]
     },
     {
       "name": "PackageableElement",
       "superClass": [
-        "NamedElement"
+        "BaseElement"
       ],
       "properties": [
         {
@@ -50,10 +36,6 @@
           "xml": {
             "serialize": "xmi:type"
           }
-        },
-        {
-          "name": "ownedComment",
-          "type": "Comment"
         },
         {
           "name": "ownedAttribute",
@@ -97,7 +79,7 @@
     {
       "name": "Property",
       "superClass": [
-        "NamedElement"
+        "BaseElement"
       ],
       "properties": [
         {
@@ -141,6 +123,13 @@
           "name": "isOrdered",
           "type": "Boolean",
           "isAttr": true
+        },
+        {
+          "name": "defaultValue",
+          "type": "DefaultValue",
+          "xml": {
+            "serialize": "xmi:type"
+          }
         }
       ]
     },
@@ -167,7 +156,7 @@
     {
       "name": "Comment",
       "superClass": [
-        "NamedElement"
+        "BaseElement"
       ],
       "properties": [
         {
@@ -184,7 +173,7 @@
     {
       "name": "Generalization",
       "superClass": [
-        "NamedElement"
+        "BaseElement"
       ],
       "properties": [
         {
@@ -246,7 +235,7 @@
     {
       "name": "PrimitiveType",
       "superClass": [
-        "NamedElement"
+        "BaseElement"
       ],
       "properties": []
     },
@@ -266,7 +255,54 @@
     {
       "name": "EnumerationLiteral",
       "superClass": [
-        "NamedElement"
+        "BaseElement"
+      ]
+    },
+    {
+      "name": "AnnotatedElement",
+      "superClass": [
+        "xmi:XMIElement"
+      ]
+    },
+    {
+      "name": "DefaultValue",
+      "superClass": [
+        "xmi:XMIElement"
+      ]
+    },
+    {
+      "name": "LiteralBoolean",
+      "superClass": [
+        "xmi:XMIElement"
+      ]
+    },
+    {
+      "name": "InstanceValue",
+      "superClass": [
+        "xmi:XMIElement"
+      ],
+      "properties": [
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "instance",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "LiteralString",
+      "superClass": [
+        "xmi:XMIElement"
+      ],
+      "properties": [
+        {
+          "name": "value",
+          "type": "String"
+        }
       ]
     }
   ],

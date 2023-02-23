@@ -13,6 +13,13 @@
           "type": "String"
         },
         {
+          "name": "documentation",
+          "type": "Documentation",
+          "xml": {
+            "serialize": "xmi:type"
+          }
+        },
+        {
           "name": "extensions",
           "type": "Element",
           "isMany": true,
@@ -24,13 +31,10 @@
     },
     {
       "name": "Documentation",
+      "superClass": [
+        "XMIElement"
+      ],
       "properties": [
-        {
-          "name": "id",
-          "isAttr": true,
-          "isId": true,
-          "type": "String"
-        },
         {
           "name": "contact",
           "isAttr": true,
@@ -38,12 +42,10 @@
         },
         {
           "name": "exporter",
-          "isAttr": true,
           "type": "String"
         },
         {
           "name": "exporterVersion",
-          "isAttr": true,
           "type": "String"
         },
         {

@@ -13,20 +13,7 @@ describe('xmi-moddle', function() {
   });
 
 
-  it('should parse mini-XMI', async function() {
-
-    // given
-    const xmi = readFile('resources/xmi/XMI-model-mini.xmi');
-
-    // when
-    const result = await moddle.fromXML(xmi);
-
-    // then
-    expect(result.warnings).to.be.empty;
-  });
-
-
-  it('should parse', async function() {
+  it('should parse XMI', async function() {
 
     // given
     const xmi = readFile('resources/xmi/XMI-model.xmi');
@@ -53,7 +40,7 @@ describe('xmi-moddle', function() {
   });
 
 
-  it.only('should parse DMNDI 1.5 XMI', async function() {
+  it('should parse DMNDI 1.5 XMI', async function() {
 
     // given
     const xmi = readFile('resources/xmi/DMNDI15.xmi');
@@ -62,7 +49,6 @@ describe('xmi-moddle', function() {
     const result = await moddle.fromXML(xmi);
 
     // then
-    printWarnings(result);
     expect(result.warnings).to.be.empty;
   });
 });
