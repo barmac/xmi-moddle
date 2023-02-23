@@ -100,14 +100,14 @@
         },
         {
           "name": "upperValue",
-          "type": "Integer",
+          "type": "UpperValue",
           "xml": {
             "serialize": "xmi:type"
           }
         },
         {
           "name": "lowerValue",
-          "type": "Integer",
+          "type": "LowerValue",
           "xml": {
             "serialize": "xmi:type"
           }
@@ -166,6 +166,9 @@
     },
     {
       "name": "Type",
+      "superClass": [
+        "xmi:XMIElement"
+      ],
       "properties": [
         {
           "name": "href",
@@ -183,7 +186,35 @@
     {
       "name": "Association",
       "superClass": [
+        "PackageableElement"
+      ],
+      "properties": []
+    },
+    {
+      "name": "LiteralUnlimitedNatural",
+      "superClass": [
         "xmi:XMIElement"
+      ],
+      "properties": [
+        {
+          "name": "value",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "LiteralInteger",
+      "superClass": [
+        "xmi:XMIElement"
+      ],
+      "properties": [
+      ]
+    },
+    {
+      "name": "PrimitiveType",
+      "superClass": [
+        "xmi:XMIElement",
+        "NamedElement"
       ],
       "properties": []
     }
