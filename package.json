@@ -1,7 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "packages/xmi-moddle"
+    "packages/xmi-moddle",
+    "packages/xmi-to-moddle"
   ],
   "scripts": {
     "lint": "eslint .",

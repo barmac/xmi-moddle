@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:uml="http://www.omg.org/spec/UML/20131001"
+         xmlns:StandardProfileL3="http://www.omg.org/spec/UML/20131001/StandardProfileL3"
+         xmlns:xmi="http://www.omg.org/spec/XMI/20131001">
+   <xmi:Documentation>
+      <xmi:exporter>MagicDraw Clean XMI Exporter</xmi:exporter>
+      <xmi:exporterVersion>17.0.5</xmi:exporterVersion>
+   </xmi:Documentation>
+   <uml:Package xmi:type="uml:Package" xmi:id="eee_1045467100313_135436_1" name="simple"
+              URI="https://example.com">
+      <packagedElement xmi:type="uml:Class" xmi:id="_18_1_f7a0369_1441609437623_926913_4145"
+                       name="simple">
+         <ownedAttribute xmi:type="uml:Property" xmi:id="_18_1_f7a0369_1441612984918_596573_6001"
+                         name="id"
+                         visibility="public">
+            <type href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String"/>
+         </ownedAttribute>
+      </packagedElement>
+   </uml:Package>
+</xmi:XMI>

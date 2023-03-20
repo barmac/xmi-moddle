@@ -13,6 +13,19 @@ describe('xmi-moddle', function() {
   });
 
 
+  it('should parse simple', async function() {
+
+    // given
+    const xmi = readFile('resources/xmi/simple.xmi');
+
+    // when
+    const result = await moddle.fromXML(xmi);
+
+    // then
+    expect(result.warnings).to.be.empty;
+  });
+
+
   it('should parse XMI', async function() {
 
     // given

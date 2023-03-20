@@ -1,0 +1,30 @@
+{
+  "name": "xmi-to-moddle",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Generate moddle schemas from XMI files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter=spec --recursive test/spec",
+    "dev": "nodemon --exec npm run test",
+    "debug": "npm test -- --inspect-brk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barmac/xmi-moddle.git"
+  },
+  "author": "Maciej Barelkowski <maciej.barelkowski@camunda.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barmac/xmi-moddle/issues"
+  },
+  "homepage": "https://github.com/barmac/xmi-moddle#readme",
+  "dependencies": {
+    "xmi-moddle": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.21"
+  }
+}
