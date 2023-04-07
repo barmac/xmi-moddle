@@ -16,7 +16,6 @@ export async function generateSchemas(xmi) {
 }
 
 function handlePackage(pkg) {
-  console.log(pkg);
   const schema = {
     name: pkg.name,
     prefix: pkg.name,
@@ -57,28 +56,53 @@ function handleClass(classElement, schema) {
 }
 
 function handleAttribute(attribute, type) {
+  const attributeType = getType(attribute);
+
   const property = {
     name: attribute.name,
-    isAttr: true,
+    isAttr: isPrimitive(attributeType),
     isId: attribute.name === 'id',
-    type: getType(attribute)
+    type: attributeType
   };
+
+  for (const key in property) {
+    if (property[key] === false) {
+      delete property[key];
+    }
+  }
 
   type.properties.push(property);
 }
 
 const PRIMITIVE_TYPES = {
   'http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String': 'String',
+  'http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer': 'Integer'
+};
+
+const UML_TYPES = {
+  'http://www.omg.org/spec/UML/20131001/UML.xmi#Element': 'uml:Element'
 };
 
 function getType(attribute) {
   const type = attribute.type;
 
-  if (type.href) {
+  if (type.href && type.href in PRIMITIVE_TYPES) {
     return PRIMITIVE_TYPES[type.href];
   }
 
-  throw new Error('unknown type', attribute.type);
+  if (type.href && type.href in UML_TYPES) {
+    return UML_TYPES[type.href];
+  }
+
+  if (type.idref) {
+    return type.idref.name;
+  }
+
+  throw new Error(`unknown type: ${attribute.type.$type}`);
+}
+
+function isPrimitive(type) {
+  return Object.values(PRIMITIVE_TYPES).includes(type);
 }
 
 function parse(xmi) {

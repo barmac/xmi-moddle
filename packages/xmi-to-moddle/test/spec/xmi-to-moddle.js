@@ -6,7 +6,7 @@ import { generateSchemas } from '../../src/index.js';
 
 describe('xmi-to-moddle', function() {
 
-  it('should generate moddle schema for XMI', async function() {
+  it('should generate moddle schema for simple XMI file', async function() {
 
     // given
     const xmi = readFile('test/fixtures/xmi/simple.xmi');
@@ -42,5 +42,18 @@ describe('xmi-to-moddle', function() {
         }
       }
     ]);
+  });
+
+
+  it('should generate moddle schema for XMI', async function() {
+
+    // given
+    const xmi = readFile('test/fixtures/xmi/XMI-model.xmi');
+
+    // when
+    const result = await generateSchemas(xmi);
+
+    // then
+    expect(result).to.exist;
   });
 });
