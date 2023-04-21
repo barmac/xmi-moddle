@@ -21,6 +21,11 @@
           "xml": {
             "serialize": "xmi:type"
           }
+        },
+        {
+          "name": "extensions",
+          "type": "Element",
+          "isMany": true
         }
       ]
     },
@@ -98,7 +103,9 @@
         },
         {
           "name": "type",
-          "type": "Type"
+          "isAttr": true,
+          "isReference": true,
+          "type": "Class"
         },
         {
           "name": "upperValue",
