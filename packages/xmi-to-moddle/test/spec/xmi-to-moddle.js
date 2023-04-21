@@ -3,7 +3,9 @@ import { writeFileSync } from 'node:fs';
 import expect from '../expect.js';
 import { readFile } from '../testUtil.js';
 
-import { generateSchemas } from '../../src/index.js';
+import { generateSchemas as generate } from '../../src/index.js';
+
+const DEBUG = process.env.DEBUG;
 
 
 describe('xmi-to-moddle', function() {
@@ -107,4 +109,15 @@ describe('xmi-to-moddle', function() {
 // eslint-disable-next-line no-unused-vars
 function writeJSON(path, schema) {
   writeFileSync(path, JSON.stringify(schema, null, 2));
+}
+
+let index = 0;
+async function generateSchemas(xmi) {
+  const result = await generate(xmi);
+
+  if (DEBUG) {
+    writeJSON(`test/results/${index++}.json`, result);
+  }
+
+  return result;
 }
