@@ -185,7 +185,9 @@
       "properties": [
         {
           "name": "general",
-          "type": "General"
+          "isAttr": true,
+          "isReference": true,
+          "type": "Class"
         }
       ]
     },
@@ -200,13 +202,6 @@
           "type": "String"
         }
       ]
-    },
-    {
-      "name": "General",
-      "superClass": [
-        "xmi:XMIElement"
-      ],
-      "properties": []
     },
     {
       "name": "Association",

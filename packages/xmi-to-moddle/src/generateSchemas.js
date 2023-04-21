@@ -86,6 +86,8 @@ function handlePackage(pkg, context) {
 function handlePackagedElement(element, schema, context) {
   if (is(element, 'uml:Class')) {
     handleClass(element, schema, context);
+  } else if (is(element, 'uml:Enumeration')) {
+    handleEnumeration(element, schema, context);
   }
 }
 
@@ -99,9 +101,13 @@ function handleClass(classElement, schema, context) {
     type.isAbstract = true;
   }
 
-  const attributes = classElement.get('ownedAttribute');
+  const superClass = getSuperClass(classElement, context);
+  if (superClass) {
+    type.superClass = [ superClass.name ];
+  }
 
-  attributes.forEach(attribute => handleAttribute(attribute, type, context));
+  type.properties = classElement.get('ownedAttribute').map(
+    attribute => handleAttribute(attribute, type, context));
 
   schema.types.push(type);
 }
@@ -125,7 +131,7 @@ function handleAttribute(attribute, moddleType, context) {
     context.warnings.push(unknownType(type, attribute, moddleType));
   }
 
-  if (isPrimitive(property.type)) {
+  if (isPrimitive(property.type) || is(type, 'uml:Enumeration')) {
     property.isAttr = true;
   }
 
@@ -145,8 +151,22 @@ function handleAttribute(attribute, moddleType, context) {
     }
   }
 
-  moddleType.properties.push(property);
+  return property;
 }
+
+function handleEnumeration(enumeration, schema, context) {
+  const type = {
+    name: enumeration.name,
+    literalValues: enumeration.ownedLiteral.map(literal => ({
+      name: literal.name
+    }))
+  };
+
+  schema.enumerations.push(type);
+}
+
+
+// helper //////
 
 function getType(attribute, context) {
   let type = attribute.type || attribute.get('extensions').find(e => e.$type === 'type');
@@ -180,4 +200,22 @@ function unknownType(type, attribute, moddleType) {
     'attribute': attribute.name,
     'type': type
   };
+}
+
+function getSuperClass(classElement, context) {
+  const generalization = classElement.generalization;
+
+  if (!generalization) {
+    return;
+  }
+
+  if (generalization.general) {
+    return generalization.general;
+  }
+
+  const general = generalization.get('extensions').find(e => e.$type === 'general');
+
+  if (general) {
+    return context.elementsById[general['xmi:idref']];
+  }
 }
